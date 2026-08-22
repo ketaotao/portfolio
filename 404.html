@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Redirecting…</title></head>
+<body>
+<script>
+  // GitHub Pages serves this file for paths that are handled by the web app.
+  // Keep the project base (/portfolio) and pass the requested route to index.html.
+  (function (location) {
+    var parts = location.pathname.split('/').filter(Boolean);
+    var base = parts.shift() || 'portfolio';
+    var route = '/' + parts.join('/');
+    location.replace('/' + base + '/?' + route.replace(/&/g, '~and~') + location.search + location.hash);
+  }(window.location));
+</script>
+</body>
+</html>
